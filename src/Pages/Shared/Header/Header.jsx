@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Marquee from "react-fast-marquee";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { authContext } from '../../../Provider/AuthProvider';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+
 
 
 const Header = () => {
+  const {user}=useContext(authContext)
     return (
         <Container>
             <div className='text-center'>
@@ -23,13 +26,13 @@ const Header = () => {
                     I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            {/* <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             <Nav.Link href="#pricing">Career</Nav.Link>
            
@@ -43,7 +46,8 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
+
         </Container>
 
     );
